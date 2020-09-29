@@ -1,5 +1,7 @@
+import 'package:enfermedades/models/categoria_model.dart';
 import 'package:enfermedades/screens/people_screen.dart';
-import 'package:enfermedades/screens/recomended_page.dart';
+import 'package:enfermedades/screens/enfermedades_screen.dart';
+import 'package:enfermedades/widgets/header.dart';
 import 'package:flick_video_player/flick_video_player.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -13,6 +15,7 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   FlickManager flickManager;
+  final listaCategoria = Categoria.list;
 
   @override
   void initState() {
@@ -20,7 +23,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
     flickManager = FlickManager(
         videoPlayerController:
-            VideoPlayerController.asset("assets/images/1595699810.mp4"));
+            VideoPlayerController.network("https://drive.google.com/file/d/182JlEC6mVjzYJPD9bd-s79hlPO8qUI0e/view?usp=sharing"));
   }
 
   @override
@@ -35,72 +38,78 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     ScreenUtil.init(context, width: 750, height: 1334, allowFontScaling: false);
     return Scaffold(
-      body: SafeArea(
-        child: Column(
-          children: <Widget>[
-            Stack(
-              children: <Widget>[
-                Container(
-                  height: 440.h,
-                  decoration: BoxDecoration(
+      body: Column(
+        children: <Widget>[
+          Header(
+            title:
+                "Alteraciones y enfermedades genéticas\nprevalentes en Ecuador",
+            isBack: false,
+            fontSize: 36.sp,
+          ),
+          Stack(
+            children: <Widget>[
+              Container(
+                height: 440.h,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.only(
+                      bottomLeft: Radius.circular(40.0.sp),
+                      bottomRight: Radius.circular(40.0.sp)),
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.black26,
+                      offset: Offset(0.0, 2.0),
+                      blurRadius: 6.0,
+                    ),
+                  ],
+                ),
+                child: ClipRRect(
                     borderRadius: BorderRadius.only(
                         bottomLeft: Radius.circular(40.0.sp),
                         bottomRight: Radius.circular(40.0.sp)),
-                    boxShadow: [
-                      BoxShadow(
-                        color: Colors.black26,
-                        offset: Offset(0.0, 2.0),
-                        blurRadius: 6.0,
-                      ),
-                    ],
-                  ),
-                  child: ClipRRect(
-                      borderRadius: BorderRadius.only(
-                          bottomLeft: Radius.circular(40.0.sp),
-                          bottomRight: Radius.circular(40.0.sp)),
-                      child: FlickVideoPlayer(
-                        flickManager: flickManager,
-                      )),
-                ),
-              ],
-            ),
-            Expanded(
-              child: ListView.builder(
-                padding: EdgeInsets.only(top: 10.h, bottom: 15.h),
-                itemCount: 5,
-                itemBuilder: (BuildContext context, int index) {
-                  return Container(
-                    margin:
-                        EdgeInsets.symmetric(vertical: 20.h, horizontal: 40.w),
-                    decoration: BoxDecoration(
-                      color: Colors.grey.withOpacity(0.3),
-                      borderRadius: BorderRadius.all(
-                        Radius.circular(20.sp),
-                      ),
-                    ),
-                    child: ListTile(
-                      title: Text('Categorías'),
-                      leading: Icon(Icons.people),
-                      onTap: () {
-                        flickManager.flickVideoManager.videoPlayerController
-                            .pause();
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => RecomendedPage()));
-                      },
-                      trailing: Icon(
-                        Icons.arrow_forward_ios,
-                        color: Colors.blueAccent,
-                        size: 40.sp,
-                      ),
-                    ),
-                  );
-                },
+                    child: FlickVideoPlayer(
+                      flickManager: flickManager,
+                    )),
               ),
+            ],
+          ),
+          Expanded(
+            child: ListView.builder(
+              padding: EdgeInsets.only(top: 10.h, bottom: 15.h),
+              itemCount: listaCategoria.length,
+              itemBuilder: (BuildContext context, int index) {
+                final categoria = listaCategoria[index];
+                return Container(
+                  margin:
+                      EdgeInsets.symmetric(vertical: 20.h, horizontal: 40.w),
+                  decoration: BoxDecoration(
+                    color: Colors.grey.withOpacity(0.3),
+                    borderRadius: BorderRadius.all(
+                      Radius.circular(20.sp),
+                    ),
+                  ),
+                  child: ListTile(
+                    title: Text(categoria.nombre),
+                    leading: Icon(Icons.people),
+                    onTap: () {
+                      flickManager.flickVideoManager.videoPlayerController
+                          .pause();
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) =>
+                                  EnfermedadesScreen(categoria: categoria)));
+                    },
+                    trailing: Icon(
+                      Icons.arrow_forward_ios,
+                      color: Colors.blueAccent,
+                      size: 40.sp,
+                    ),
+                  ),
+                );
+              },
             ),
-          ],
-        ),
+          ),
+        ],
       ),
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: _currentTab,
