@@ -1,6 +1,6 @@
 import 'package:enfermedades/helper/light_color.dart';
 import 'package:enfermedades/models/categoria_model.dart';
-import 'package:enfermedades/screens/disease_screen.dart';
+import 'package:enfermedades/screens/enfermedad_screen.dart';
 import 'package:enfermedades/widgets/header.dart';
 import 'package:enfermedades/widgets/video_player.dart';
 import 'package:flick_video_player/flick_video_player.dart';
@@ -26,7 +26,7 @@ class _EnfermedadesScreenState extends State<EnfermedadesScreen> {
 
     flickManager = FlickManager(
         videoPlayerController:
-            VideoPlayerController.asset("assets/images/1595699810.mp4"));
+            VideoPlayerController.network(widget.categoria.videoURL));
   }
 
   @override
@@ -39,15 +39,22 @@ class _EnfermedadesScreenState extends State<EnfermedadesScreen> {
     return ListView.builder(
         itemCount: widget.categoria.enfermedades.length,
         itemBuilder: (BuildContext context, int index) {
+          final enfermedad = widget.categoria.enfermedades[index];
           return GestureDetector(
-            onTap: () => Navigator.push(context,
-                MaterialPageRoute(builder: (context) => DiseaseScreen())),
+            onTap: () {
+              flickManager.flickVideoManager.videoPlayerController.pause();
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => EnfermedadScreen(
+                            enfermedad: enfermedad,
+                          )));
+            },
             child: Container(
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: <Widget>[
-                  _enfermedadInfo(widget.categoria.enfermedades[index],
-                      background: LightColor.seeBlue),
+                  _enfermedadInfo(enfermedad, background: LightColor.seeBlue),
                   Divider(
                     thickness: 1,
                     endIndent: 20,
@@ -77,10 +84,13 @@ class _EnfermedadesScreenState extends State<EnfermedadesScreen> {
                   blurRadius: 10,
                   color: Color(0x12000000))
             ]),
-        child: ClipRRect(
-          borderRadius: BorderRadius.all(Radius.circular(20)),
-          child: FittedBox(
-              fit: BoxFit.fill, child: Image(image: AssetImage(imgPath))),
+        child: Hero(
+          tag: imgPath,
+          child: ClipRRect(
+            borderRadius: BorderRadius.all(Radius.circular(20)),
+            child: FittedBox(
+                fit: BoxFit.fill, child: Image(image: AssetImage(imgPath))),
+          ),
         ));
   }
 
@@ -127,23 +137,6 @@ class _EnfermedadesScreenState extends State<EnfermedadesScreen> {
             ))
           ],
         ));
-  }
-
-  Widget _chip(String text, Color textColor,
-      {double height = 0, bool isPrimaryCard = false}) {
-    return Container(
-      alignment: Alignment.center,
-      padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: height),
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.all(Radius.circular(25.sp)),
-        color: textColor.withAlpha(isPrimaryCard ? 200 : 50),
-      ),
-      child: Text(
-        text,
-        style: TextStyle(
-            color: isPrimaryCard ? Colors.white : textColor, fontSize: 22.sp),
-      ),
-    );
   }
 
   @override

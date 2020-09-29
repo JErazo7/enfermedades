@@ -1,4 +1,5 @@
 import 'package:enfermedades/models/categoria_model.dart';
+import 'package:enfermedades/screens/infor_screen.dart';
 import 'package:enfermedades/screens/people_screen.dart';
 import 'package:enfermedades/screens/enfermedades_screen.dart';
 import 'package:enfermedades/widgets/header.dart';
@@ -22,8 +23,8 @@ class _HomeScreenState extends State<HomeScreen> {
     super.initState();
 
     flickManager = FlickManager(
-        videoPlayerController:
-            VideoPlayerController.network("https://drive.google.com/file/d/182JlEC6mVjzYJPD9bd-s79hlPO8qUI0e/view?usp=sharing"));
+        videoPlayerController: VideoPlayerController.network(
+            "https://firebasestorage.googleapis.com/v0/b/gym-tracker-a85f6.appspot.com/o/intro.mp4?alt=media&token=3e59d997-f82a-4c80-8211-2eb47d8f1753"));
   }
 
   @override
@@ -37,6 +38,7 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     ScreenUtil.init(context, width: 750, height: 1334, allowFontScaling: false);
+
     return Scaffold(
       body: Column(
         children: <Widget>[
@@ -89,7 +91,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   ),
                   child: ListTile(
                     title: Text(categoria.nombre),
-                    leading: Icon(Icons.people),
+                    leading: Icon(Icons.description),
                     onTap: () {
                       flickManager.flickVideoManager.videoPlayerController
                           .pause();
@@ -116,6 +118,10 @@ class _HomeScreenState extends State<HomeScreen> {
         onTap: (int value) {
           if (value == 1) {
             flickManager.flickVideoManager.videoPlayerController.pause();
+            Navigator.push(
+                context, MaterialPageRoute(builder: (context) => InfoScreen()));
+          } else if (value == 2) {
+            flickManager.flickVideoManager.videoPlayerController.pause();
             Navigator.push(context,
                 MaterialPageRoute(builder: (context) => PeopleScreen()));
           }
@@ -124,6 +130,13 @@ class _HomeScreenState extends State<HomeScreen> {
           BottomNavigationBarItem(
             icon: Icon(
               Icons.home,
+              size: 50.sp,
+            ),
+            title: SizedBox.shrink(),
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(
+              Icons.info_outline,
               size: 50.sp,
             ),
             title: SizedBox.shrink(),
