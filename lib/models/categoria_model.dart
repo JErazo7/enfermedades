@@ -8,7 +8,7 @@ class Categoria {
   static List<Categoria> list = [
     Categoria(
       'Cromosómicas',
-      'https://firebasestorage.googleapis.com/v0/b/gym-tracker-a85f6.appspot.com/o/2.mp4?alt=media&token=5e26b6f6-80fa-4d2f-a9d1-cf72a7a3d1a3',
+      'https://firebasestorage.googleapis.com/v0/b/gym-tracker-a85f6.appspot.com/o/cromosomicas.mp4?alt=media&token=2608a397-54b7-4a7f-b1b7-5eb4f2fe587a',
       [
         Enfermedad(
             'Síndrome de Down (trisomía 21)',
@@ -87,101 +87,101 @@ class Categoria {
               'Herencia autosómica dominante',
               'Es un síndrome neurocutáneo que puede afectar el cerebro, médula espinal, nervios periféricos, piel, huesos y otros sistemas del cuerpo humano.',
               'assets/images/monogenicas/1.png',
-              'assets/text/poligenicas/1.md'),
+              'assets/text/monogenicas/1.md'),
           Enfermedad(
               'Enfermedad de Huntington',
               'Herencia autosómica dominante',
               'Trastorno genético en el cual las neuronas en ciertas partes del cerebro se desgastan o se degeneran. La enfermedad se transmite de padres a hijos.',
               'assets/images/monogenicas/2.png',
-              'assets/text/poligenicas/1.md'),
+              'assets/text/monogenicas/2.md'),
           Enfermedad(
               'Distrofia Miotónica Tipo 1 (de Steinert)',
               'Herencia autosómica dominante',
               'Es una enfermedad multisistémica que afecta al músculo liso y esquelético, así como al ojo, corazón, sistema endocrino y sistema nervioso central.',
               'assets/images/monogenicas/3.jpg',
-              'assets/text/poligenicas/1.md'),
+              'assets/text/monogenicas/3.md'),
           Enfermedad(
               'Síndrome de Marfan',
               'Herencia autosómica dominante',
               'Trastorno de los tejidos conectivos que producen alteraciones  esqueléticas, oculares y del sistema cardiovascular.',
               'assets/images/monogenicas/4.jpg',
-              'assets/text/poligenicas/1.md'),
+              'assets/text/monogenicas/4.md'),
           Enfermedad(
               'Poliquistosis renal ',
               'Herencia autosómica recesiva',
               'Es una enfermedad multisistémica, caracterizada por la presencia de múltiples quistes renales bilaterales, así como por manifestaciones extrarenales.',
               'assets/images/monogenicas/5.jpg',
-              'assets/text/poligenicas/1.md'),
+              'assets/text/monogenicas/5.md'),
           Enfermedad(
               'Anemia falciforme',
               'Herencia autosómica recesiva',
               'Es una afección en la que los glóbulos rojos tienen forma de luna creciente o hoz ,  Esta deformidad estructural entorpece la circulación sanguínea .',
               'assets/images/monogenicas/6.jpg',
-              'assets/text/poligenicas/1.md'),
+              'assets/text/monogenicas/6.md'),
           Enfermedad(
               'Síndrome de Laron',
               'Herencia autosómica recesiva',
               'Es una enfermedad congénita caracterizada por una marcada baja estatura, asociada a niveles normales o elevados de hormona del crecimiento (GH) en el suero, y niveles bajos de IGF-1.',
               'assets/images/monogenicas/7.png',
-              'assets/text/poligenicas/1.md'),
+              'assets/text/monogenicas/7.md'),
           Enfermedad(
               'Hipotiroidismo Congénito',
               'Herencia autosómica recesiva',
               'Se define como una deficiencia de hormonas tiroideas presente al nacimiento, puede ser por que nacen sin la glándula tiroides o esta no funciona bien.',
               'assets/images/monogenicas/8.jpg',
-              'assets/text/poligenicas/1.md'),
+              'assets/text/monogenicas/8.md'),
           Enfermedad(
               'Hiperplasia Suprarrenal Congénita',
               'Herencia autosómica recesiva',
               'Es el nombre dado a un grupo de trastornos hereditarios de las glándulas suprarrenales.',
               'assets/images/monogenicas/9.jpg',
-              'assets/text/poligenicas/1.md'),
+              'assets/text/monogenicas/9.md'),
           Enfermedad(
               'Fenilcetonuria',
               'Herencia autosómica recesiva',
               'Es una afección poco frecuente en la cual un bebé nace sin la capacidad para descomponer apropiadamente un aminoácido llamado fenilalanina.',
               'assets/images/monogenicas/11.jpg',
-              'assets/text/poligenicas/1.md'),
+              'assets/text/monogenicas/10.md'),
           Enfermedad(
               'Galactosemia',
               'Herencia autosómica recesiva',
               'Es una afección en la cual el cuerpo no puede utilizar (metabolizar) el azúcar simple galactosa.',
               'assets/images/monogenicas/12.jpg',
-              'assets/text/poligenicas/1.md'),
+              'assets/text/monogenicas/11.md'),
           Enfermedad(
               'Fibrosis quística',
               'Herencia autosómica recesiva',
               'Es una enfermedad que provoca la acumulación de moco espeso y pegajoso en los pulmones, el tubo digestivo y otras áreas del cuerpo. Es uno de los tipos de enfermedad pulmonar crónica más común en niños y adultos jóvenes. Es una enfermedad potencialmente mortal.',
               'assets/images/monogenicas/13.jpg',
-              'assets/text/poligenicas/1.md'),
+              'assets/text/monogenicas/12.md'),
           Enfermedad(
               'Atrofia Muscular Espinal',
               'Herencia autosómica recesiva',
               'Es una de varias enfermedades hereditarias que destruyen progresivamente las neuronas motoras inferiores, células nerviosas en el tallo cerebral y la médula espinal que controlan la actividad muscular voluntaria esencial como hablar, caminar, respirar y deglutir.',
               'assets/images/monogenicas/14.jpg',
-              'assets/text/poligenicas/1.md'),
+              'assets/text/monogenicas/13.md'),
           Enfermedad(
               'Distrofia muscular de Duchenne',
               'Herencia Recesiva Ligada Al Cromosoma X',
               'Es un trastorno hereditario. Este implica debilidad muscular, la cual empeora rápidamente.',
               'assets/images/monogenicas/15.jpg',
-              'assets/text/poligenicas/1.md'),
+              'assets/text/monogenicas/14.md'),
           Enfermedad(
               'Hemofilia A',
               'Herencia Recesiva Ligada Al Cromosoma X',
               'Es un trastorno hemorrágico hereditario causado por una falta del factor de coagulación sanguínea VIII. Sin suficiente cantidad de este factor, la sangre no se puede coagular apropiadamente para detener el sangrado.',
               'assets/images/monogenicas/16.jpg',
-              'assets/text/poligenicas/1.md'),
+              'assets/text/monogenicas/15.md'),
           Enfermedad(
               'Síndrome de X frágil ',
               'Herencia Dominante Ligado Al X',
               'Es una afección genética que involucra cambios en parte del cromosoma X. Es la forma más común de discapacidad intelectual hereditario en niños.',
               'assets/images/monogenicas/17.jpg',
-              'assets/text/poligenicas/1.md'),
+              'assets/text/monogenicas/16.md'),
         ]),
     Categoria(
         'Poligénicas',
-        'https://firebasestorage.googleapis.com/v0/b/gym-tracker-a85f6.appspot.com/o/2.mp4?alt=media&token=5e26b6f6-80fa-4d2f-a9d1-cf72a7a3d1a3',
+        'https://firebasestorage.googleapis.com/v0/b/gym-tracker-a85f6.appspot.com/o/Polig%C3%A9nicas.mp4?alt=media&token=58d13b4d-38df-4bef-a03c-226f4da606d5',
         [
           Enfermedad(
               'Hipertensión Arterial',
@@ -269,7 +269,7 @@ class Categoria {
               'assets/text/poligenicas/14.md'),
         ]),
     Categoria(
-        'Faltante',
+        'Tratamientos para enfermedades genéticas',
         'https://firebasestorage.googleapis.com/v0/b/gym-tracker-a85f6.appspot.com/o/WhatsApp%20Video%202020-09-28%20at%2023.43.16.mp4?alt=media&token=33bed3cc-db38-48a2-8c17-02e5b355b01a',
         [])
   ];

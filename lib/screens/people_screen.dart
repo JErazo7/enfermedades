@@ -44,10 +44,11 @@ class PeopleScreen extends StatelessWidget {
                     style: TextStyle(
                         fontSize: 28.sp, fontWeight: FontWeight.bold)),
                 SizedBox(height: 20.h),
-                Text("Karolyn García", style: TextStyle(fontSize: 28.sp)),
-                Text("Karolyn García", style: TextStyle(fontSize: 28.sp)),
-                Text("Karolyn García", style: TextStyle(fontSize: 28.sp)),
-                Text("Karolyn García", style: TextStyle(fontSize: 28.sp)),
+                Text("Buenaño Moreta Marlon Xavier", style: TextStyle(fontSize: 28.sp)),
+                Text("Chávez Enriquez Jefferson David", style: TextStyle(fontSize: 28.sp)),
+                Text("Condolo Guaillas Kerly Janina", style: TextStyle(fontSize: 28.sp)),
+                Text("Fernández Poma Gabriela Germania", style: TextStyle(fontSize: 28.sp)),
+                Text("García Vilaña Karolyn Amanda", style: TextStyle(fontSize: 28.sp)),
                 SizedBox(height: 40.h),
                 Text("Docente:",
                     style: TextStyle(

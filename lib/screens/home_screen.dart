@@ -1,9 +1,11 @@
+import 'package:enfermedades/helper/light_color.dart';
 import 'package:enfermedades/models/categoria_model.dart';
 import 'package:enfermedades/screens/infor_screen.dart';
 import 'package:enfermedades/screens/people_screen.dart';
 import 'package:enfermedades/screens/enfermedades_screen.dart';
 import 'package:enfermedades/widgets/header.dart';
 import 'package:flick_video_player/flick_video_player.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'package:flutter/material.dart';
@@ -21,7 +23,11 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   void initState() {
     super.initState();
-
+    SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle.light.copyWith(
+        statusBarColor: Colors.transparent, // Color for Android
+        statusBarBrightness:
+            Brightness.dark // Dark == white status bar -- for IOS.
+        ));
     flickManager = FlickManager(
         videoPlayerController: VideoPlayerController.network(
             "https://firebasestorage.googleapis.com/v0/b/gym-tracker-a85f6.appspot.com/o/intro.mp4?alt=media&token=3e59d997-f82a-4c80-8211-2eb47d8f1753"));
@@ -76,13 +82,13 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
           Expanded(
             child: ListView.builder(
-              padding: EdgeInsets.only(top: 10.h, bottom: 15.h),
+              padding: EdgeInsets.only(top: 20.h, bottom: 10.h),
               itemCount: listaCategoria.length,
               itemBuilder: (BuildContext context, int index) {
                 final categoria = listaCategoria[index];
                 return Container(
                   margin:
-                      EdgeInsets.symmetric(vertical: 20.h, horizontal: 40.w),
+                      EdgeInsets.symmetric(vertical: 10.h, horizontal: 40.w),
                   decoration: BoxDecoration(
                     color: Colors.grey.withOpacity(0.3),
                     borderRadius: BorderRadius.all(
@@ -103,8 +109,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     },
                     trailing: Icon(
                       Icons.arrow_forward_ios,
-                      color: Colors.blueAccent,
-                      size: 40.sp,
+                      color: LightColor.darkOrange,
                     ),
                   ),
                 );
@@ -130,21 +135,18 @@ class _HomeScreenState extends State<HomeScreen> {
           BottomNavigationBarItem(
             icon: Icon(
               Icons.home,
-              size: 50.sp,
             ),
             title: SizedBox.shrink(),
           ),
           BottomNavigationBarItem(
             icon: Icon(
               Icons.info_outline,
-              size: 50.sp,
             ),
             title: SizedBox.shrink(),
           ),
           BottomNavigationBarItem(
             icon: Icon(
               Icons.people,
-              size: 50.sp,
             ),
             title: SizedBox.shrink(),
           ),
