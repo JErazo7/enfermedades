@@ -33,7 +33,7 @@ class PeopleScreen extends StatelessWidget {
                 Text("Facultad de Ciencias Médicas",
                     style: TextStyle(
                         fontSize: 34.sp, fontWeight: FontWeight.bold)),
-                Text("Carrera de Médicina",
+                Text("Carrera de Medicina",
                     style: TextStyle(
                         fontSize: 32.sp, fontWeight: FontWeight.bold)),
                 Text("Cátedra de Genética",
@@ -54,8 +54,8 @@ class PeopleScreen extends StatelessWidget {
                     style: TextStyle(
                         fontSize: 28.sp, fontWeight: FontWeight.bold)),
                 SizedBox(height: 20.h),
-                Text("Dr. Lopez", style: TextStyle(fontSize: 28.sp)),
-                Text("PS.", style: TextStyle(fontSize: 28.sp)),
+                Text("Dr. Ramiro López Pulles", style: TextStyle(fontSize: 28.sp)),
+                Text("P5", style: TextStyle(fontSize: 28.sp)),
               ],
             ),
           ),

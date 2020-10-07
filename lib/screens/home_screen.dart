@@ -28,9 +28,10 @@ class _HomeScreenState extends State<HomeScreen> {
         statusBarBrightness:
             Brightness.dark // Dark == white status bar -- for IOS.
         ));
+    //Aquí se carga el video
     flickManager = FlickManager(
         videoPlayerController: VideoPlayerController.network(
-            "https://firebasestorage.googleapis.com/v0/b/gym-tracker-a85f6.appspot.com/o/intro.mp4?alt=media&token=3e59d997-f82a-4c80-8211-2eb47d8f1753"));
+            "https://firebasestorage.googleapis.com/v0/b/gym-tracker-a85f6.appspot.com/o/intro.mp4?alt=media&token=72e1269d-6f29-4c06-8187-25db2eec1f81"));
   }
 
   @override
